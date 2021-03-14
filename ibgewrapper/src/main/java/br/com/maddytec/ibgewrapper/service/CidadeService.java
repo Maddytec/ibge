@@ -15,11 +15,11 @@ public class CidadeService {
 
     private static final String URL_BASE_IBGE = "https://servicodados.ibge.gov.br/";
 
-    public List<CidadeJson> execute(Long estado){
+    public List<CidadeJson> execute(String idUf){
         CidadeClient cidadeClient = Feign.builder()
                 .decoder(new GsonDecoder())
                 .target(CidadeClient.class, URL_BASE_IBGE);
 
-        return cidadeClient.get(estado);
+        return cidadeClient.get(idUf);
     }
 }

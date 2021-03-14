@@ -28,7 +28,7 @@ public class EstadoResource {
     }
 
     @GetMapping("/{UF}/cidades")
-    public List<CidadeJson> listarCidades(@PathVariable("UF") Long UF){
+    public List<CidadeJson> listarCidades(@PathVariable("UF") String UF){
         return cidadeService.execute(UF);
     }
 

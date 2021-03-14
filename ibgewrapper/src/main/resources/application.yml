@@ -1,0 +1,23 @@
+kafka:
+  bootstrap-servers: 127.0.0.1:9092
+  topic.request.estado: topic_request_estado
+  topic.request.reply.estado: topic_request_reply_estado
+  topic.request.cidade: topic_request_cidade
+  topic.request.reply.cidade: topic_request_reply_cidade
+  consumergroup: principal
+  producer:
+    max:
+      request:
+        size: 231072000
+    batch-size: 60000000
+    buffer-memory: 60000000
+    bootstrap-servers: 127.0.0.1:9092
+    client-id: principal-producer
+    consumer:
+      group-id: principal
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+
+spring:
+  application:
+    name: principal-producer
